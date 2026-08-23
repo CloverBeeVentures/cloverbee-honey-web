@@ -4,3 +4,4 @@ deployment:
     - export DEPLOYPATH=/home/qhki0803/public_html/
     - /bin/cp index.html $DEPLOYPATH
     - python3 tools/patch_cinematic_bees.py $DEPLOYPATH/index.html
+    - python3 tools/extend_flower_time.py $DEPLOYPATH/index.html
