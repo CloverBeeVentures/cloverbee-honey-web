@@ -1,21 +1,11 @@
 #!/usr/bin/env python3
 from pathlib import Path
-import base64
 import sys
 
-if len(sys.argv) != 4:
-    raise SystemExit("usage: patch_cinematic_bees.py INDEX_HTML B64_SOURCE PNG_TARGET")
+if len(sys.argv) != 2:
+    raise SystemExit("usage: patch_cinematic_bees.py INDEX_HTML")
 
 index_path = Path(sys.argv[1])
-b64_path = Path(sys.argv[2])
-png_path = Path(sys.argv[3])
-
-# Write the approved bee PNG into the site's existing images directory.
-bee_b64 = b64_path.read_text(encoding="utf-8").strip()
-png_path.parent.mkdir(parents=True, exist_ok=True)
-png_path.write_bytes(base64.b64decode(bee_b64))
-png_path.chmod(0o644)
-
 html = index_path.read_text(encoding="utf-8")
 
 css_start_marker = "    /* Page-relative cinematic bees */"
@@ -42,9 +32,9 @@ bee_start = html.index(bee_start_marker)
 bee_end = html.index(bee_end_marker, bee_start)
 
 new_bees = '''    <!-- Option 4 selected: approved fluffy 3D/cinematic bee -->
-    <div class="bee bee1"><img class="bee-art" src="/images/bee-cinematic.png?v=4" width="78" height="78" alt=""></div>
-    <div class="bee bee2"><img class="bee-art" src="/images/bee-cinematic.png?v=4" width="78" height="78" alt=""></div>
-    <div class="bee bee3"><img class="bee-art" src="/images/bee-cinematic.png?v=4" width="78" height="78" alt=""></div>'''
+    <div class="bee bee1"><img class="bee-art" src="/images/bee-cinematic.svg?v=5" width="78" height="78" alt=""></div>
+    <div class="bee bee2"><img class="bee-art" src="/images/bee-cinematic.svg?v=5" width="78" height="78" alt=""></div>
+    <div class="bee bee3"><img class="bee-art" src="/images/bee-cinematic.svg?v=5" width="78" height="78" alt=""></div>'''
 html = html[:bee_start] + new_bees + html[bee_end:]
 
 # Keep bees upright. They face left/right and only bank slightly.
@@ -68,4 +58,4 @@ html = html.replace('.bee{width:44px;height:44px}', '.bee{width:62px;height:62px
 html = html.replace('.bee{width:56px;height:56px}', '.bee{width:62px;height:62px}')
 
 index_path.write_text(html, encoding="utf-8")
-print(f"Wrote {png_path} and patched visible upright cinematic bees into {index_path}")
+print(f"Patched SVG cinematic bees and upright motion into {index_path}")
