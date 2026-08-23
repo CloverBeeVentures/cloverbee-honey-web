@@ -3,6 +3,4 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/qhki0803/public_html/
     - /bin/cp index.html $DEPLOYPATH
-    - /bin/mkdir -p $DEPLOYPATH/images/
-    - /bin/cp assets/bee-cinematic.svg $DEPLOYPATH/images/bee-cinematic.svg
     - python3 tools/patch_cinematic_bees.py $DEPLOYPATH/index.html
