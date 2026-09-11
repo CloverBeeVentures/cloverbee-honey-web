@@ -5,5 +5,7 @@ deployment:
     - /bin/cp index.html $DEPLOYPATH
     - /bin/mkdir -p $DEPLOYPATH/assets
     - /bin/cp assets/honey-products.png $DEPLOYPATH/assets/honey-products.png
+    - /bin/mkdir -p $DEPLOYPATH/bplogger
+    - /bin/cp bplogger/privacy.html $DEPLOYPATH/bplogger/privacy.html
     - python3 tools/patch_cinematic_bees.py $DEPLOYPATH/index.html
     - python3 tools/extend_flower_time.py $DEPLOYPATH/index.html
