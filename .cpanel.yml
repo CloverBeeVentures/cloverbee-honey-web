@@ -8,5 +8,8 @@ deployment:
     - /bin/mkdir -p $DEPLOYPATH/bplogger
     - /bin/cp bplogger/privacy.html $DEPLOYPATH/bplogger/privacy.html
     - /bin/cp bplogger/support.html $DEPLOYPATH/bplogger/support.html
+    - /bin/mkdir -p $DEPLOYPATH/gainer
+    - /bin/cp gainer/privacy.html $DEPLOYPATH/gainer/privacy.html
+    - /bin/cp gainer/support.html $DEPLOYPATH/gainer/support.html
     - python3 tools/patch_cinematic_bees.py $DEPLOYPATH/index.html
     - python3 tools/extend_flower_time.py $DEPLOYPATH/index.html
