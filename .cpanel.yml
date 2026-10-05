@@ -5,6 +5,7 @@ deployment:
     - /bin/cp index.html $DEPLOYPATH
     - /bin/mkdir -p $DEPLOYPATH/assets
     - /bin/cp assets/honey-products.png $DEPLOYPATH/assets/honey-products.png
+    - /bin/cp assets/from-yard.svg $DEPLOYPATH/assets/from-yard.svg
     - /bin/mkdir -p $DEPLOYPATH/bplogger
     - /bin/cp bplogger/privacy.html $DEPLOYPATH/bplogger/privacy.html
     - /bin/cp bplogger/support.html $DEPLOYPATH/bplogger/support.html
