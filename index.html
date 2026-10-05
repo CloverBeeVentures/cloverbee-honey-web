@@ -84,6 +84,12 @@
     .story-copy p{font-size:17px;color:#5d6159;line-height:1.72;margin:0 0 18px}
     .quote{margin:28px 0 0;border-left:3px solid var(--honey);padding:3px 0 3px 18px;color:#33463a;font-family:Georgia,serif;font-size:21px;line-height:1.5}
 
+    .from-yard{padding:0 0 96px;background:white}
+    .from-yard-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:48px;align-items:center}
+    .from-yard-copy p{font-size:17px;color:#5d6159;line-height:1.72;margin:0}
+    .from-yard-photo{border-radius:28px;overflow:hidden;box-shadow:0 22px 62px rgba(30,50,37,.15);aspect-ratio:16/9}
+    .from-yard-photo img{width:100%;height:100%;object-fit:cover}
+
     .availability{padding:0 0 96px;background:white}
     .availability-box{display:grid;grid-template-columns:1.3fr .7fr;gap:30px;align-items:center;padding:50px 54px;border-radius:30px;background:linear-gradient(135deg,#f3e5bf 0%,#f8efd8 52%,#edf2e7 100%);border:1px solid #e5dbc5}
     .availability h2{font-size:40px;margin:0 0 10px}
@@ -111,7 +117,7 @@
 
     @media(max-width:900px){
       .navlinks a:not(.cta){display:none}
-      .hero-grid,.story-grid,.availability-box{grid-template-columns:1fr}
+      .hero-grid,.story-grid,.from-yard-grid,.availability-box{grid-template-columns:1fr}
       .hero{padding-top:42px}
       .photo-card{aspect-ratio:1/1}
       .band-grid{grid-template-columns:1fr}
@@ -256,6 +262,17 @@
           <p>The website uses our own apiary photos rather than stock images because the place, the hives, and the bees are part of the product.</p>
           <div class="quote">Real bees. Real backyard. Real honey.</div>
         </div>
+      </div>
+    </section>
+
+    <section class="from-yard" id="from-yard">
+      <div class="wrap from-yard-grid">
+        <div class="from-yard-copy">
+          <div class="eyebrow">From the yard</div>
+          <h2>Where the honey starts.</h2>
+          <p>Clover, garden flowers and whatever else is blooming — our bees spend the season working the neighbourhood around the apiary.</p>
+        </div>
+        <div class="from-yard-photo"><img src="/assets/from-yard.svg" alt="A CloverBee honey bee flying over clover near our backyard apiary"></div>
       </div>
     </section>
 
